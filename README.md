@@ -67,6 +67,8 @@ HanLP下载地址：https://github.com/hankcs/HanLP/releases
 
 Solr5.x、Lucene5.x插件：https://github.com/hankcs/hanlp-solr-plugin
 
+更多细节：https://github.com/hankcs/HanLP/wiki
+
 ------
 
 ## 下载与配置
@@ -79,7 +81,7 @@ Solr5.x、Lucene5.x插件：https://github.com/hankcs/hanlp-solr-plugin
 <dependency>
     <groupId>com.hankcs</groupId>
     <artifactId>hanlp</artifactId>
-    <version>portable-1.3.0</version>
+    <version>portable-1.3.2</version>
 </dependency>
 ```
 
@@ -312,7 +314,7 @@ public class DemoCustomDictionary
 - 词典格式
   * 每一行代表一个单词，格式遵从`[单词] [词性A] [A的频次] [词性B] [B的频次] ...` 如果不填词性则表示采用词典的默认词性。
   * 词典的默认词性默认是名词n，可以通过配置文件修改：`全国地名大全.txt ns;`如果词典路径后面空格紧接着词性，则该词典默认是该词性。
-  * 在基于层叠隐马模型的最短路分词中，并不保证自定义词典中的词一定被切分出来。如果你认为这个词绝对应该切分出来，那么请将词频设大一些
+  * 在基于层叠隐马模型的最短路分词中，并不保证自定义词典中的词一定被切分出来。
   * 关于用户词典的更多信息请参考**词典说明**一章。
 - 算法详解
   * [《Trie树分词》](http://www.hankcs.com/program/java/tire-tree-participle.html)

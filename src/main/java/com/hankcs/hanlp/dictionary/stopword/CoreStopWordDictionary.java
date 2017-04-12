@@ -20,9 +20,9 @@ import com.hankcs.hanlp.utility.TextUtility;
 
 import java.io.DataOutputStream;
 import java.io.File;
-import java.io.FileOutputStream;
 import java.util.List;
 import java.util.ListIterator;
+import static com.hankcs.hanlp.utility.Predefine.logger;
 
 
 /**
@@ -46,7 +46,7 @@ public class CoreStopWordDictionary
             }
             catch (Exception e)
             {
-                System.err.println("载入停用词词典" + HanLP.Config.CoreStopWordDictionaryPath + "失败"  + TextUtility.exceptionToString(e));
+                logger.severe("载入停用词词典" + HanLP.Config.CoreStopWordDictionaryPath + "失败"  + TextUtility.exceptionToString(e));
             }
         }
         else
@@ -91,7 +91,7 @@ public class CoreStopWordDictionary
                 }
                 default:
                 {
-                    if (term.word.length() > 1 && !CoreStopWordDictionary.contains(term.word))
+                    if (!CoreStopWordDictionary.contains(term.word))
                     {
                         return true;
                     }
